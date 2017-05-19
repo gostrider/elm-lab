@@ -1,0 +1,31 @@
+# Elm Lab for testing throwable code, exploring scalable code base.
+
+## Requirement:
+
+elm version
+elm 0.18
+
+For macOS,
+
+Download installer or install from `npm install -g elm`
+
+For ubuntu,
+
+To install node package manger
+`sudo apt-get install npm`
+
+To install elm
+`npm install -g elm`
+
+
+## Build:
+
+To download project required elm packages
+`elm-package install`
+
+To build project
+`elm-make src/native/Main.elm --output index.html`
+
+If any error indicate library syntax mismatch, please run
+
+`rm -r elm-stuff && elm-package install`
