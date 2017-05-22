@@ -1,9 +1,14 @@
 module View.PageA exposing (..)
 
-import Html exposing (Html, text)
-import Model.PageA exposing (AState)
+import Html exposing (Html, input, br, div, input, text)
+import Html.Events exposing (onInput)
+import Model.PageA exposing (AState, AAction(ChangeField))
 
 
-aView : AState -> Html msg
+aView : AState -> Html AAction
 aView state =
-    text state.content
+    div []
+        [ text state.content
+        , br [] []
+        , input [ onInput ChangeField ] []
+        ]

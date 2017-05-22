@@ -4,7 +4,7 @@ import Html exposing (Html, text)
 import Model.Application
     exposing
         ( Application
-        , Action(..)
+        , Action(UpdateA)
         , Page(..)
         , PageState(..)
         )
@@ -17,9 +17,6 @@ app_view app =
         Loaded p ->
             viewPage p
 
-        Loading p ->
-            viewPage p
-
 
 viewPage : Page -> Html Action
 viewPage page =
@@ -28,4 +25,4 @@ viewPage page =
             text "blank"
 
         PageA a ->
-            aView a
+            Html.map UpdateA (aView a)
